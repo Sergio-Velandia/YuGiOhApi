@@ -1,0 +1,495 @@
+/* =========================================
+   1. ESTILOS BASE Y UTILITY
+   ========================================= */
+
+:root {
+    --color-bg-dark: #1e1e1e; /* Fondo oscuro */
+    --color-bg-medium: #2c2c2c; /* Fondo de secciones */
+    --color-text-light: #f0f0f0; /* Texto claro */
+    --color-accent-gold: #ffc300; /* Dorado/Amarillo de detalle */
+    --color-highlight-red: #c70039; /* Rojo para acentos o ATK */
+    --color-shadow: rgba(0, 0, 0, 0.4);
+    --border-radius-card: 8px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    min-height: 100vh;
+}
+
+#root {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Navegación --- */
+nav {
+    background-color: var(--color-bg-medium);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0 4px 6px var(--color-shadow);
+}
+
+nav button {
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    border: 1px solid var(--color-accent-gold);
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+nav button:hover {
+    background-color: var(--color-accent-gold);
+    color: var(--color-bg-dark);
+}
+
+/* --- Botón primario general --- */
+#root > button {
+    margin: 20px 0;
+    padding: 12px 25px;
+    background-color: var(--color-highlight-red);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: var(--border-radius-card);
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+#root > button:hover {
+    background-color: #a3002f;
+}
+
+/* --- Buscador (Home) --- */
+.c-buscador {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: var(--color-bg-medium);
+    color: var(--color-text-light);
+    border: 1px solid var(--color-accent-gold);
+    border-radius: var(--border-radius-card);
+    font-size: 1em;
+}
+
+/* --- Contenedor de Filtros (Tipos) --- */
+.tipos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+    justify-content: center;
+}
+
+.tipos-container button {
+    background-color: var(--color-bg-medium);
+    color: var(--color-accent-gold);
+    border: 1px solid var(--color-accent-gold);
+    padding: 6px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.tipos-container button:hover {
+    background-color: var(--color-accent-gold);
+    color: var(--color-bg-dark);
+}
+
+/* --- Contenedor de la Lista General (Home) --- */
+.c-contenedor-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-bg-medium);
+}
+
+/* --- Estilo Individual de la Tarjeta en la Lista --- */
+.c-lista-card {
+    background-color: var(--color-bg-medium);
+    padding: 10px;
+    border-radius: var(--border-radius-card);
+    text-align: center;
+    box-shadow: 0 4px 8px var(--color-shadow);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--color-bg-medium);
+}
+
+.c-lista-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px var(--color-shadow);
+    border-color: var(--color-accent-gold);
+}
+
+.c-lista-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+.c-lista-card p {
+    font-size: 0.9em;
+    margin: 2px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-name {
+    font-weight: bold;
+    color: var(--color-accent-gold);
+}
+
+.card-type {
+    font-size: 0.8em;
+    color: #999;
+}
+
+/* --- Contenedor de Detalle --- */
+.c-detalle-ygo {
+    background-color: var(--color-bg-medium);
+    padding: 30px;
+    border-radius: var(--border-radius-card);
+    box-shadow: 0 5px 15px var(--color-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.c-detalle-ygo h2 {
+    color: var(--color-accent-gold);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.c-detalle-ygo img {
+    border: 5px solid var(--color-accent-gold);
+    border-radius: var(--border-radius-card);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+
+/* --- Contenedor de Información --- */
+.c-detalles-info {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+
+.c-detalles-info strong {
+    color: var(--color-accent-gold);
+}
+
+.c-detalles-info p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.c-detalles-info .descripcion {
+    margin-top: 15px;
+    font-style: italic;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+/* --- Botón Favorito en Detalle --- */
+.c-detalle-ygo button {
+    padding: 10px 20px;
+    background-color: var(--color-highlight-red);
+    color: var(--color-text-light);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.c-detalle-ygo button:hover {
+    background-color: #a3002f;
+}
+
+.c-detalle-ygo button span {
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+/* --- Estilos del Contador --- */
+#contador {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--color-accent-gold);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* --- Contenedor de Cartas Recién Obtenidas (Nuevos) --- */
+.c-lista-nuevas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: var(--color-bg-medium);
+    border-radius: var(--border-radius-card);
+    margin-bottom: 30px;
+    border: 2px dashed var(--color-highlight-red);
+}
+
+.c-un_aleatorio {
+    /* Reusa estilos de c-lista-card */
+    border: 2px solid var(--color-highlight-red);
+    box-shadow: 0 0 10px var(--color-highlight-red);
+}
+
+/* --- Contenedor del Álbum de Colección --- */
+.c-lista-album {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--color-bg-medium);
+    border-radius: var(--border-radius-card);
+}
+
+/* --- Cuadro Individual del Álbum (Slot) --- */
+.c-un-cuadro {
+    background-color: #383838;
+    border: 1px dashed #555;
+    height: 120px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    color: #888;
+    transition: background-color 0.2s;
+}
+
+/* --- Estilo para cartas OBTENIDAS en el álbum --- */
+.c-mios-card {
+    background-color: #000;
+    border: 2px solid var(--color-accent-gold);
+    color: var(--color-text-light);
+    cursor: pointer;
+}
+
+.c-mios-card:hover {
+    box-shadow: 0 0 8px var(--color-accent-gold);
+}
+
+.c-mios-card img {
+    border-radius: 2px;
+}
+
+
+/* =========================================
+   5. ESTILOS DE PÁGINA INFORMATIVA
+   ========================================= */
+
+.c-informativa-ygo {
+    background-color: var(--color-bg-medium);
+    padding: 40px;
+    border-radius: var(--border-radius-card);
+    box-shadow: 0 5px 15px var(--color-shadow);
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.titulo-ygo {
+    font-size: 2.2em;
+    color: var(--color-accent-gold);
+    text-align: center;
+    margin-bottom: 5px;
+    border-bottom: 2px solid var(--color-highlight-red);
+    padding-bottom: 10px;
+}
+
+.subtitulo-ygo {
+    font-size: 1.1em;
+    text-align: center;
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+.info-seccion {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #353535;
+    border-radius: 6px;
+}
+
+.info-seccion h2 {
+    color: var(--color-highlight-red);
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #555;
+    padding-bottom: 5px;
+}
+
+.info-seccion p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.info-seccion ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.info-seccion li {
+    background-color: #3f3f3f;
+    padding: 8px 12px;
+    margin: 6px 0;
+    border-left: 4px solid var(--color-accent-gold);
+    border-radius: 4px;
+}
+
+.info-seccion a {
+    color: var(--color-accent-gold);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.info-seccion a:hover {
+    color: var(--color-highlight-red);
+}
+
+.info-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+    font-size: 0.9em;
+    color: #888;
+}
+
+/* =========================================
+   6. ESTILOS DE PÁGINA ORIGINAL (ANATOMÍA)
+   ========================================= */
+
+.c-original-ygo {
+    background-color: var(--color-bg-medium);
+    padding: 40px;
+    border-radius: var(--border-radius-card);
+    box-shadow: 0 5px 15px var(--color-shadow);
+    max-width: 1000px;
+    margin: 30px auto;
+}
+
+.titulo-original {
+    font-size: 2.2em;
+    color: var(--color-highlight-red);
+    text-align: center;
+    margin-bottom: 5px;
+    border-bottom: 2px solid var(--color-accent-gold);
+    padding-bottom: 10px;
+}
+
+.subtitulo-original {
+    font-size: 1.1em;
+    text-align: center;
+    color: #bbb;
+    margin-bottom: 30px;
+}
+
+/* --- Contenedor Principal (Imagen y Puntos) --- */
+.info-ilustrada {
+    display: flex;
+    flex-wrap: wrap; /* Permite que se apilen en móviles */
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.ilustracion-container {
+    flex: 0 0 300px; /* Tamaño fijo para la imagen */
+    text-align: center;
+}
+
+.carta-ejemplo {
+    width: 100%;
+    max-width: 300px;
+    border: 8px solid var(--color-accent-gold);
+    border-radius: var(--border-radius-card);
+    box-shadow: 0 0 15px var(--color-shadow);
+}
+
+.puntos-clave-container {
+    flex: 1;
+    min-width: 300px;
+}
+
+.puntos-clave-container h2 {
+    color: var(--color-accent-gold);
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.punto-clave {
+    background-color: #353535;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--color-highlight-red);
+    border-radius: 4px;
+}
+
+.punto-clave h3 {
+    color: var(--color-text-light);
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+/* --- Sección de Atributos --- */
+.info-seccion-tipo {
+    padding: 20px;
+    background-color: #252525;
+    border-radius: var(--border-radius-card);
+}
+
+.info-seccion-tipo h2 {
+    color: var(--color-accent-gold);
+    border-bottom: 1px dashed #555;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.lista-atributos {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+}
+
+.lista-atributos li {
+    flex: 1 1 200px; /* Ocupa al menos 200px */
+    background-color: #353535;
+    padding: 10px 15px;
+    border-left: 5px solid; /* El color se define inline en JS */
+    border-radius: 4px;
+}
