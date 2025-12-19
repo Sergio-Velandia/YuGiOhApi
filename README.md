@@ -9,20 +9,35 @@ YuGiOhAPI es una aplicación web interactiva diseñada para los entusiastas del 
 
 -API Externa	Fuente de datos para las cartas de Yu-Gi-Oh!
 
+# Estructura
+
 YuGiOhAPI/
 ├── .vscode/                # Configuración del editor (settings.json)
+
 ├── paginas/                # Módulos de JavaScript por sección
+
 │   ├── PaginaOriginal.js   # Lógica base o inicial del proyecto
+
 │   ├── coleccion.js        # Gestión y visualización de la colección completa
+
 │   ├── conexion.js         # Configuración de peticiones Fetch/API
+
 │   ├── detalle.js          # Lógica para mostrar información de una carta específica
+
 │   ├── favoritos.js        # Sistema de guardado y gestión de favoritos
+
 │   ├── home.js             # Lógica de la pantalla de inicio
+
 │   └── informativa.js      # Sección de información general o ayuda
+
 ├── index.html              # Punto de entrada principal
+
 ├── script.js               # Script principal (orquestador)
+
 ├── styles.css              # Estilos globales
+
 └── README.md               # Documentación del proyecto
+
 
 
 # Funcionalidades principales
